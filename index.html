@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floricultura Encanto das Flores</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            font-style: italic;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #667eea;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23f0f8ff" width="1200" height="400"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #667eea;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .btn:hover {
+            background-color: #764ba2;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .price {
+            font-size: 1.5em;
+            color: #764ba2;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .about {
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .about h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .about p {
+            color: #666;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .contact {
+            background-color: #f0f8ff;
+            padding: 40px 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .contact-item strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌸 Floricultura Encanto das Flores 🌸</h1>
+        <p>Beleza e natureza em cada arranjo</p>
+    </header>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="container">
+        <section id="inicio" class="hero">
+            <h2>Floresça com Nossas Criações</h2>
+            <p>Flores frescas entregues para celebrar seus momentos especiais</p>
+            <a href="#produtos" class="btn">Ver Produtos</a>
+        </section>
+
+        <section id="produtos">
+            <h2 style="text-align: center; color: #667eea;">Nossos Produtos</h2>
+            <div class="products">
+                <div class="product-card">
+                    <div class="product-image">🌹</div>
+                    <div class="product-info">
+                        <h3>Rosas Vermelhas</h3>
+                        <p>Arranjo elegante com rosas vermelhas importadas. Perfeito para declarations de amor e ocasiões especiais.</p>
+                        <div class="price">R$ 120,00</div>
+                        <button class="btn">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🌺</div>
+                    <div class="product-info">
+                        <h3>Hibisco Tropical</h3>
+                        <p>Arranjo exótico com flores tropicais coloridas. Traz alegria e vitalidade para qualquer ambiente.</p>
+                        <div class="price">R$ 95,00</div>
+                        <button class="btn">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🌼</div>
+                    <div class="product-info">
+                        <h3>Girassóis Radiantes</h3>
+                        <p>Bouquet ensolarado com girassóis frescos. Transmite felicidade e positividade em qualquer ocasião.</p>
+                        <div class="price">R$ 85,00</div>
+                        <button class="btn">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🌷</div>
+                    <div class="product-info">
+                        <h3>Tulipas Holandesas</h3>
+                        <p>Elegantes tulipas importadas da Holanda. Ideais para presentear e decorar ambientes sofisticados.</p>
+                        <div class="price">R$ 110,00</div>
+                        <button class="btn">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">💐</div>
+                    <div class="product-info">
+                        <h3>Buquê Misto Premium</h3>
+                        <p>Combinação especial de flores variadas. O presente perfeito para deixar alguém especial feliz.</p>
+                        <div class="price">R$ 150,00</div>
+                        <button class="btn">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🌻</div>
+                    <div class="product-info">
+                        <h3>Orquídeas Exóticas</h3>
+                        <p>Flores raras e delicadas com flores exóticas. Para os apaixonados por plantas sofisticadas.</p>
+                        <div class="price">R$ 140,00</div>
+                        <button class="btn">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="about">
+            <h2>Sobre Nós</h2>
+            <p>
+                A Floricultura Encanto das Flores é uma empresa dedicada a trazer beleza e elegância para suas celebrações. 
+                Com mais de 10 anos de experiência, oferecemos os mais belos arranjos florais, sempre com flores frescas e de alta qualidade. 
+                Nosso compromisso é fazer de cada momento especial ainda mais memorável com nossas criações artísticas em flores.
+            </p>
+            <p style="margin-top: 15px;">
+                Trabalhamos com flores importadas e nacionais, selecionando As melhores para garantir a satisfação de nossos clientes. 
+                Entregamos em toda a região com cuidado e pontualidade, e oferecemos também serviços personalizados para eventos especiais.
+            </p>
+        </section>
+
+        <section id="contato" class="contact">
+            <h2>Entre em Contato</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>📞 Telefone</strong>
+                    <p>(11) 3456-7890</p>
+                </div>
+                <div class="contact-item">
+                    <strong>📧 Email</strong>
+                    <p>contato@encantodas flores.com</p>
+                </div>
+                <div class="contact-item">
+                    <strong>📍 Endereço</strong>
+                    <p>Rua das Flores, 123 - São Paulo</p>
+                </div>
+            </div>
+            <a href="mailto:contato@encantodas flores.com" class="btn">Enviar Mensagem</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Floricultura Encanto das Flores. Todos os direitos reservados.</p>
+        <p>Desenvolvido com ❤️ produzindo beleza</p>
+    </footer>
+</body>
+</html>
